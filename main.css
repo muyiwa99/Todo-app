@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Josefin+Sans:wght@400;700&family=Montserrat:wght@500;700&family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(235, 21%, 11%);
+  font-family: "Barlow", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  color: hsl(0, 0%, 98%);
+}
+
+.hero-light {
+  display: none;
+}
+.hero-dark {
+  display: block;
+}
+
+.mob-1 {
+  display: none;
+}
+
+.mob-2 {
+  display: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+.container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 1rem auto;
+  width: 40%;
+}
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 2rem;
+}
+.container-header h2 {
+  color: hsl(0, 0%, 98%);
+  font-size: 3.5rem;
+}
+.container-header .sun {
+  width: 7%;
+  height: 7%;
+  margin-block-start: 1.3rem;
+  display: block;
+  cursor: pointer;
+}
+.container-header .moon {
+  width: 7%;
+  height: 7%;
+  margin-block-start: 1.3rem;
+  display: none;
+  cursor: pointer;
+}
+.container-task-creator {
+  background: hsl(235, 24%, 19%);
+  padding: 1.7rem;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  border-radius: 8px;
+}
+.container-task-creator .checkbox {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 16px;
+  z-index: 1;
+  opacity: 0;
+}
+.container-task-creator .checkbox:hover ~ .check {
+  border: solid 2px hsl(220, 98%, 61%);
+}
+.container-task-creator .checkbox:checked ~ .check {
+  background: linear-gradient(#57ddff, #c058f3);
+}
+.container-task-creator .checkbox:checked ~ .check::after {
+  content: "";
+  background: url(./images/icon-check.svg);
+  height: 45px;
+  width: 45px;
+  background-size: 40%;
+  position: absolute;
+  top: 6px;
+  left: 5px;
+  background-repeat: no-repeat;
+}
+.container-task-creator .check {
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  height: 33px;
+  width: 33px;
+  border: 3px solid hsl(237, 14%, 26%);
+  border-radius: 50%;
+}
+.container-task-creator .create-task {
+  background-color: hsl(235, 24%, 19%);
+  border: none;
+  height: 25px;
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  outline: none;
+  font-weight: 100;
+}
+.container-task-list {
+  border: 1px solid rgb(157, 150, 150);
+  margin-block-start: 2rem;
+  height: auto;
+  border-radius: 4px;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+}
+.container-task-list #todos .task {
+  background: hsl(235, 24%, 19%);
+  border: none;
+  padding: 1.2rem 0.4rem 1rem 0.4rem;
+  height: 60px;
+  border-bottom: 1px solid white;
+  display: flex;
+  justify-content: space-between;
+}
+.container-task-list #todos .task .start {
+  display: inherit;
+  gap: 3.5rem;
+}
+.container-task-list #todos .task .start .label {
+  color: white;
+}
+.container-task-list #todos .task img {
+  width: -moz-min-content;
+  width: min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+.container-task-list #todos .task img:hover {
+  cursor: pointer;
+}
+.container .task.completed label {
+  text-decoration: line-through;
+  color: #03cdcd;
+}
+.container-task-list #todos li .on {
+  position: relative;
+}
+.container-task-list #todos li .on .checkbox {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  left: 5px;
+  top: -3px;
+}
+.container-task-list #todos li .on .checkbox:hover ~ .check {
+  border: solid 2px hsl(220, 98%, 61%);
+}
+.container-task-list #todos li .on .checkbox:checked ~ .check {
+  background: linear-gradient(#57ddff, #c058f3);
+}
+.container-task-list #todos li .on .checkbox:checked ~ .check::after {
+  content: "";
+  background: url(./images/icon-check.svg);
+  height: 30px;
+  width: 30px;
+  background-size: 80%;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 5px;
+  left: 2px;
+}
+.container-task-list #todos li .on .check {
+  height: 35px;
+  width: 35px;
+  border: 2px solid hsl(237, 14%, 26%);
+  position: absolute;
+  left: 2px;
+  top: -6px;
+  border-radius: 50%;
+}
+.container-task-list-statuses {
+  display: flex;
+  background: hsl(235, 24%, 19%);
+  justify-content: space-between;
+  color: hsl(234, 11%, 52%);
+  padding: 1rem;
+  width: auto;
+  height: 60px;
+}
+.container-task-list-statuses .tasks {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+.container-task-list-statuses .tasks #all:hover,
+.container-task-list-statuses .tasks #active:hover,
+.container-task-list-statuses .tasks #completed:hover {
+  color: hsl(0, 0%, 98%);
+}
+.container-task-list-statuses .tasks .active {
+  color: hsl(220, 98%, 61%);
+}
+.container-task-list-statuses .clr {
+  cursor: pointer;
+}
+.container-task-list-statuses .clr:hover {
+  color: hsl(0, 0%, 98%);
+}
+.container .drag {
+  display: flex;
+  justify-content: center;
+  color: hsl(234, 11%, 52%);
+  margin-block-start: 2rem;
+}/*# sourceMappingURL=main.css.map */

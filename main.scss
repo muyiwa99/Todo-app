@@ -1,0 +1,279 @@
+@import "config";
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Josefin+Sans:wght@400;700&family=Montserrat:wght@500;700&family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $Very-Dark-Blue;
+  font-family: "Barlow", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+// Attribution
+.attribution {
+  position: absolute;
+  bottom: 0;
+  color: $Very-Light-Gray;
+}
+
+// Hero images
+.hero {
+  &-light {
+    display: none;
+  }
+  &-dark {
+    display: block;
+  }
+}
+
+.mob-1 {
+  display: none;
+}
+
+.mob-2 {
+  display: none;
+}
+
+// Lists
+ul li {
+  list-style: none;
+}
+
+// Line
+// hr {
+//   width: 100%;
+
+//   border: 1px solid $Very-Light-Gray;
+// }
+
+// Main Container-
+.container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 1rem auto;
+  width: 40%;
+  // Header
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin-block-end: 2rem;
+
+    h2 {
+      color: $Very-Light-Gray;
+      font-size: 3.5rem;
+    }
+    .sun {
+      width: 7%;
+      height: 7%;
+      margin-block-start: 1.3rem;
+      display: block;
+      cursor: pointer;
+    }
+    .moon {
+      width: 7%;
+      height: 7%;
+      margin-block-start: 1.3rem;
+      display: none;
+      cursor: pointer;
+    }
+  }
+
+  // Task Creator input
+  &-task-creator {
+    background: $Very-Dark-Desaturated-Blue;
+    padding: 1.7rem;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+    border-radius: 8px;
+    // Styling the checkbox
+    .checkbox {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      left: 16px;
+      z-index: 1;
+      opacity: 0;
+      &:hover ~ .check {
+        border: solid 2px $Bright-Blue;
+      }
+
+      // Changing the background when checked
+      &:checked ~ .check {
+        background: $Check-Background;
+      }
+      // Adding the tick when check box is ticked
+      &:checked ~ .check::after {
+        content: "";
+        background: url(./images/icon-check.svg);
+        height: 45px;
+        width: 45px;
+        background-size: 40%;
+        position: absolute;
+        top: 6px;
+        left: 5px;
+        background-repeat: no-repeat;
+      }
+    }
+    //
+    .check {
+      position: absolute;
+      top: 21px;
+      left: 10px;
+      height: 33px;
+      width: 33px;
+      border: 3px solid $Very-Dark-Grayish-Blue3;
+      border-radius: 50%;
+    }
+
+    // Create a task box
+    .create-task {
+      // padding: 0.3rem 4.8rem;
+      background-color: $Very-Dark-Desaturated-Blue;
+      border: none;
+      height: 25px;
+      width: 100%;
+      color: white;
+      font-size: 1.5rem;
+      outline: none;
+      font-weight: 100;
+    }
+  }
+
+  &-task-list {
+    // background: $Very-Dark-Desaturated-Blue;
+    border: 1px solid rgb(157, 150, 150);
+    margin-block-start: 2rem;
+    // padding: 1rem;
+    height: auto;
+    border-radius: 4px;
+    // display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+  }
+  &-task-list #todos .task {
+    background: $Very-Dark-Desaturated-Blue;
+    border: none;
+    padding: 1.2rem 0.4rem 1rem 0.4rem;
+    height: 60px;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    // border-radius: 6px;
+
+    .start {
+      display: inherit;
+      gap: 3.5rem;
+      .label {
+        color: white;
+      }
+    }
+    img {
+      width: min-content;
+      height: min-content;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  // When the task is checked, the label is then checked off
+  .task.completed label {
+    text-decoration: line-through;
+    color: #03cdcd;
+  }
+
+  // List checkbox styling
+  &-task-list #todos li .on {
+    position: relative;
+    .checkbox {
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      opacity: 0;
+      z-index: 1;
+      left: 5px;
+      top: -3px;
+      &:hover ~ .check {
+        border: solid 2px $Bright-Blue;
+      }
+
+      &:checked ~ .check {
+        background: $Check-Background;
+      }
+
+      &:checked ~ .check::after {
+        content: "";
+        background: url(./images/icon-check.svg);
+        height: 30px;
+        width: 30px;
+        background-size: 80%;
+        position: absolute;
+        background-repeat: no-repeat;
+        top: 5px;
+        left: 2px;
+      }
+    }
+
+    .check {
+      height: 35px;
+      width: 35px;
+      border: 2px solid $Very-Dark-Grayish-Blue3;
+      position: absolute;
+      left: 2px;
+      top: -6px;
+      border-radius: 50%;
+    }
+  }
+
+  &-task-list-statuses {
+    display: flex;
+    background: $Very-Dark-Desaturated-Blue;
+    justify-content: space-between;
+    color: $Dark-Grayish-Blue;
+    padding: 1rem;
+    width: auto;
+    height: 60px;
+    // border: 1px solid black;
+
+    .tasks {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+      #all:hover,
+      #active:hover,
+      #completed:hover {
+        color: $Very-Light-Gray;
+      }
+      .active {
+        color: $Bright-Blue;
+      }
+    }
+    // clear button
+    .clr {
+      cursor: pointer;
+      &:hover {
+        color: $Very-Light-Gray;
+      }
+    }
+  }
+
+  .drag {
+    display: flex;
+    justify-content: center;
+    color: $Dark-Grayish-Blue;
+    margin-block-start: 2rem;
+  }
+}

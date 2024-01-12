@@ -1,0 +1,30 @@
+@import "config";
+
+@media (min-width: 375px) and (max-width: 800px) {
+  .hero {
+    &-light {
+      display: none;
+    }
+    &-dark {
+      display: none;
+    }
+  }
+
+  .mob-1 {
+    display: block;
+  }
+
+  .mob-2 {
+    display: none;
+  }
+
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+}

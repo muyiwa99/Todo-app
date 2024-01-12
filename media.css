@@ -1,0 +1,22 @@
+@media (min-width: 375px) and (max-width: 800px) {
+  .hero-light {
+    display: none;
+  }
+  .hero-dark {
+    display: none;
+  }
+  .mob-1 {
+    display: block;
+  }
+  .mob-2 {
+    display: none;
+  }
+  .container {
+    width: 80%;
+  }
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+}/*# sourceMappingURL=media.css.map */

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="media.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <!-- Hero image  -->
+    <div class="hero">
+      <img src="/images/bg-desktop-dark.jpg" alt="" class="hero-dark" />
+      <img src="/images/bg-mobile-dark.jpg" class="mob-1" />
+      <img src="/images/bg-mobile-light.jpg" class="mob-2" />
+      <img src="/images/bg-desktop-light.jpg" alt="" class="hero-light" />
+    </div>
+
+    <main>
+      <!-- To do container  -->
+      <div class="container">
+        <div class="container-header">
+          <h2>TODO</h2>
+          <img class="sun" src="/images/icon-sun.svg" alt="" />
+          <img class="moon" src="/images/icon-moon.svg" alt="" />
+        </div>
+        <!-- text field for creating todo taks  -->
+        <div class="container-task-creator">
+          <div class="on">
+            <input type="checkbox" class="checkbox" />
+            <span class="check"></span>
+          </div>
+          <input
+            type="text"
+            placeholder="Create a new todo..."
+            class="create-task"
+            id="task-input"
+          />
+        </div>
+        <!-- Container that displays the created tasks  -->
+        <div class="container-task-list">
+          <div class="todo">
+            <ul id="todos">
+              <!-- <li>
+                <div class="start">
+                  <div class="on">
+                    <input type="checkbox" class="checkbox" />
+                    <span class="check"></span>
+                  </div>
+
+                  <label for=""> Test</label>
+                </div>
+                <img src="/images/icon-cross.svg" alt="" />
+              </li> -->
+            </ul>
+          </div>
+          <!-- Statutes container -->
+
+          <div class="container-task-list-statuses">
+            <!-- Counter to keep trak of current taks added  -->
+            <div>
+              <p><span id="count"></span> Items left</p>
+            </div>
+            <!-- task statuses -->
+            <div class="tasks">
+              <div id="all">
+                <p class="status-button active all" data-status="all">ALL</p>
+              </div>
+              <div id="active">
+                <p class="status-button activee" data-status="active">Active</p>
+              </div>
+              <div id="completed">
+                <p class="status-button completed" data-status="completed">
+                  Completed
+                </p>
+              </div>
+            </div>
+            <!-- Clear completed tasks -->
+            <div>
+              <p class="clr">Clear Completed</p>
+            </div>
+          </div>
+        </div>
+        <!-- drag and drop message -->
+        <p class="drag">Drag and drop to reorder list</p>
+      </div>
+    </main>
+
+    <!-- Atturbution -->
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io/profile/muyiwa99" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Muyiwa Areola</a>.
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="theme.js"></script>
+</html>
